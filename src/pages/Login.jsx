@@ -3,7 +3,7 @@ import Button from "../components/Button";
 
 import { Link } from "react-router-dom";
 import Card from "../components/Card";
-import TextInput from "./Textinput";
+import TextInput from "./TextInput";
 
 export default function Login() {
   return (

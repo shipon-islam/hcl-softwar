@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import hcl_logo from "../assets/hcl-logo.png";
 import Button from "../components/Button";
-import TextInput from "./Textinput";
+import TextInput from "./TextInput";
 
 export default function Signup() {
   return (
