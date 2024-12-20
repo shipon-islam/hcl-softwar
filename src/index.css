@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .layout-wrapper {
+    @apply min-w-0 max-w-[1500px] mx-auto;
+  }
+  .layout-padding {
+    @apply px-4;
+  }
+  .active-mobile-nav {
+    @apply before:absolute before:-top-1 before:left-1/2 before:bg-hcl-blue before:w-6 before:rounded-md before:h-1.5 before:-translate-x-1/2;
+  }
+  .flowbite-card div {
+    @apply p-0;
+  }
+}
