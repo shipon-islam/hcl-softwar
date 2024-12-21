@@ -4,12 +4,14 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 import hcl_logo from "../assets/hcl-logo.png";
 import Button from "../components/Button";
+import { notificationApi } from "../constants";
 import {
   LogoutIcon,
   MenubtnIcon,
   NotificationIcon,
   PeopleIcon,
 } from "./Hcl_Icons";
+import NotificationList from "./NotificationList";
 
 export default function Header() {
   const [openModal, setOpenModal] = useState(false);
@@ -97,27 +99,15 @@ export default function Header() {
           className="top-[20px]"
           position="top-right"
           show={openNotifyModal}
-          size="md"
+          size="lg"
           onClose={() => setOpenNotifyModal(false)}
           popup
         >
           <Modal.Header />
           <Modal.Body>
-            <div className="text-center">
-              <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-                Are you sure you want to delete this product?
-              </h3>
-              <div className="flex justify-center gap-4">
-                <Button
-                  color="failure"
-                  onClick={() => setOpenNotifyModal(false)}
-                >
-                  {"Yes, I'm sure"}
-                </Button>
-                <Button color="gray" onClick={() => setOpenNotifyModal(false)}>
-                  No, cancel
-                </Button>
-              </div>
+            <div className=" text-hcl-slate max-h-[calc(100vh-10rem)] overflow-y-auto scrollbar-thin pb-8 px-2">
+              <h1 className="font-bold text-xl">Notifications</h1>
+              <NotificationList notificationApi={notificationApi} />
             </div>
           </Modal.Body>
         </Modal>

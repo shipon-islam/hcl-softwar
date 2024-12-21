@@ -8,7 +8,7 @@ export default function Button({
 }) {
   return (
     <button
-      className={`w-full  py-1.5 rounded-md hover:bg-slate-600 text-white capitalize ${color} ${className}`}
+      className={`py-1.5 px-4 rounded-md hover:bg-slate-600 text-white capitalize ${color} ${className}`}
       {...rest}
     >
       {children}

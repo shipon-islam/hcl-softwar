@@ -28,7 +28,7 @@ const events = [
 export default function Home() {
   return (
     <div className="layout-padding">
-      <div className=" grid grid-cols-2  items-center">
+      <div className=" grid grid-cols-[2fr_3fr] gap-x-6  items-center px-4">
         <Card>
           <div>
             <h3>Dear Micheal Adams</h3>

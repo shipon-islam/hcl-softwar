@@ -13,9 +13,13 @@ export default {
         "hcl-black": "#17182E",
         "hcl-gray": "#292929",
         "hch-slate-2": "#1C3366",
+        "hch-gray": "#F9F9F9",
       },
       boxShadow: {
         custom: "-1px 2px 4px 1.5px rgba(67, 97, 166, 0.04)",
+      },
+      fontFamily: {
+        hcl: ["HCLTechRoobert", "sans-serif"],
       },
     },
   },

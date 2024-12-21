@@ -1,39 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import {
-  DashboardIcon,
-  HomeIcon,
-  NetworkingIcon,
-  PeopleIcon,
-  SettingsIcon,
-} from "../Hcl_Icons";
-
-const navItems = [
-  {
-    name: "Home",
-    href: "/",
-    Icon: HomeIcon,
-  },
-  {
-    name: "Album",
-    href: "/album",
-    Icon: DashboardIcon,
-  },
-  {
-    name: "Networking",
-    href: "/networking",
-    Icon: NetworkingIcon,
-  },
-  {
-    name: "Profile",
-    href: "/profile",
-    Icon: PeopleIcon,
-  },
-  {
-    name: "Settings",
-    href: "/settings",
-    Icon: SettingsIcon,
-  },
-];
+import { navItems } from "../../constants";
 
 export function MobileNavbar() {
   const { pathname } = useLocation();
@@ -58,7 +24,7 @@ export function MobileNavbar() {
                   : "text-muted-foreground hover:text-primary"
               } h-full relative `}
             >
-              <item.Icon />
+              <item.Icon className="text-white" />
             </Link>
           );
         })}

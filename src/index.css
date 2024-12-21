@@ -11,7 +11,24 @@
   .active-mobile-nav {
     @apply before:absolute before:-top-1 before:left-1/2 before:bg-hcl-blue before:w-6 before:rounded-md before:h-1.5 before:-translate-x-1/2;
   }
+  .active-side-nav {
+    @apply text-white w-full relative before:absolute before:top-0 before:-right-1 before:bg-hcl-blue before:w-1.5 before:rounded-md before:h-6;
+  }
   .flowbite-card div {
     @apply p-0;
   }
+  .notification-title bold {
+    @apply font-medium px-1.5;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgb(238, 236, 233); /* Tailwind Purple-300 */
+  border-radius: 9999px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(187, 178, 178); /* Tailwind Purple-300 */
 }

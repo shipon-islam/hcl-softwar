@@ -1,9 +1,8 @@
+import { Link } from "react-router-dom";
 import hcl_logo from "../assets/hcl-logo.png";
 import Button from "../components/Button";
-
-import { Link } from "react-router-dom";
 import Card from "../components/Card";
-import TextInput from "./TextInput";
+import TextInput from "../components/TextInput";
 
 export default function Login() {
   return (
