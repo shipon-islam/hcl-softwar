@@ -14,12 +14,12 @@ import {
 import NotificationList from "./NotificationList";
 
 export default function Header() {
-  const [openModal, setOpenModal] = useState(false);
+  const [openLogoutModal, setOpenLogouModal] = useState(false);
   const [openNotifyModal, setOpenNotifyModal] = useState(false);
   const { pathname } = useLocation();
   const hiddenPath = ["/login", "/signup", "/join"];
   return (
-    <header className="sticky z-50 top-0">
+    <header className="sticky z-50 top-0 text-hcl-slate">
       <nav className={`${hiddenPath.includes(pathname) && "hidden"}`}>
         <div className="flex md:flex-row-reverse justify-between items-center w-full h-16 border-b  bg-white layout-wrapper layout-padding shadow-custom">
           <div className="flex gap-x-8">
@@ -52,7 +52,7 @@ export default function Header() {
                   </li>
                   <li
                     className="flex items-center gap-x-1.5 cursor-pointer text-hcl-purple pt-6"
-                    onClick={() => setOpenModal(true)}
+                    onClick={() => setOpenLogouModal(true)}
                   >
                     <LogoutIcon className="w-4" />
                     Log Out
@@ -80,7 +80,11 @@ export default function Header() {
             <NotificationIcon className="text-hcl-slate" />
           </Link>
         </div>
-        <Modal show={openModal} onClose={() => setOpenModal(false)}>
+        <Modal
+          show={openLogoutModal}
+          onClose={() => setOpenLogouModal(false)}
+          size="sm"
+        >
           <Modal.Header className="border-none py-3" />
           <Modal.Body className="pt-0 pb-8 grid place-self-center">
             <div className="text-center space-y-6">
@@ -88,7 +92,7 @@ export default function Header() {
                 <LogoutIcon fill={true} />
               </span>
 
-              <h2>Are you sure?</h2>
+              <h2 className="font-medium text-xl">Are you sure?</h2>
               <p>This will end your session</p>
               <p>You can login again later</p>
               <Button className="w-fit">Log Out</Button>
