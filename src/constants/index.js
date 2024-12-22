@@ -1,4 +1,4 @@
-import gaston from "../assets/images/notify-man.webp";
+import avatar from "../assets/png/avatar.png";
 import {
   DashboardIcon,
   EventIcon,
@@ -35,6 +35,26 @@ export const navItems = [
     Icon: SettingsIcon,
   },
 ];
+export const events_home = [
+  {
+    id: 1,
+    title: "Abu Dhabi Grand Prix",
+    photo: "/images/dubai_white_noise.png",
+    date: "December 5th, 2024",
+  },
+  {
+    id: 2,
+    title: "Austin Grand Prix",
+    photo: "/images/austin.jpg",
+    date: "October 20th, 2024",
+  },
+  {
+    id: 3,
+    title: "Monza Grand Prix",
+    photo: "/images/jonathan.jpg",
+    date: "October 22th, 2024",
+  },
+];
 export const notificationApi = [
   {
     timestamp: "today",
@@ -58,7 +78,7 @@ export const notificationApi = [
     notifications: [
       {
         id: 1,
-        photo: gaston,
+        photo: "/images/notify-man.webp",
         title: `<bold>Gaston Goyret</bold>wants to join your network`,
       },
     ],
@@ -188,5 +208,249 @@ export const faqs = [
     answer:
       "If you forget your login credentials, please click on the 'Forgot Password' link on the login page of the MyEvents portal. Follow the instructions to reset your password. If you continue to have issues, contact our event support team for assistance.",
     isOpen: true,
+  },
+];
+export const network_peoples = [
+  {
+    id: 1,
+    name: "Gaston Goyret",
+    company: "HCL Software",
+    title: "AVP",
+    photo: "/images/notify-man.webp",
+  },
+  {
+    id: 2,
+    name: "Rodrigo Plumari G.",
+    company: "Bineo",
+    title: "CIO",
+    photo: avatar,
+  },
+  {
+    id: 3,
+    name: "Rommel Flores",
+    company: "Grupo Comercial Control",
+    title: "VP e-commerce",
+    photo: avatar,
+  },
+  {
+    id: 4,
+    name: "Nocolas Geronimo",
+    company: "Dportenis",
+    title: "Director AI",
+    photo: avatar,
+  },
+  {
+    id: 5,
+    name: "Karlo Mondragon",
+    company: "Grupo Salinas",
+    title: "CHRO",
+    photo: avatar,
+  },
+  {
+    id: 6,
+    name: "Antonio Antunez",
+    company: "Grupo Comercial Control",
+    title: "Director General",
+    photo: avatar,
+  },
+  {
+    id: 7,
+    name: "Rodrigo Plumari G.",
+    company: "Bineo",
+    title: "CIO",
+    photo: avatar,
+  },
+  {
+    id: 8,
+    name: "Rommel Flores",
+    company: "Grupo Comercial Control",
+    title: "VP e-commerce",
+    photo: avatar,
+  },
+  {
+    id: 9,
+    name: "Nocolas Geronimo",
+    company: "Dportenis",
+    title: "Director AI",
+    photo: avatar,
+  },
+  {
+    id: 10,
+    name: "Karlo Mondragon",
+    company: "Grupo Salinas",
+    title: "CHRO",
+    photo: avatar,
+  },
+
+  {
+    id: 11,
+    name: "Karlo Mondragon",
+    company: "Grupo Salinas",
+    title: "CHRO",
+    photo: avatar,
+  },
+];
+export const event_flags_gellery = [
+  {
+    id: 1,
+    name: "Mexico Grand Prix",
+    photo: "/images/mexico-flag.jpg",
+    date: "October 26, 2024",
+  },
+  {
+    id: 2,
+    name: "Austin Grand Prix",
+    photo: "/images/austin-flag.jpg",
+    date: "October 15, 2024",
+  },
+  {
+    id: 3,
+    name: "Singapore Grand Prix",
+    photo: "/images/singapore-flag.jpg",
+    date: "September 22, 2024",
+  },
+  {
+    id: 4,
+    name: "Monza Grand Prix",
+    photo: "/images/monza-flag.jpg",
+    date: "Agust 12, 2024",
+  },
+  {
+    id: 5,
+    name: "Abu Dhabi Grand Prix",
+    photo: "/images/abu-dhabi.jpg",
+    date: "December 5, 2024",
+  },
+];
+export const gallery_posts = [
+  {
+    id: 1,
+    photo: {
+      type: "verticle",
+      url: "/images/verticle-1.jpg",
+    },
+    tagged_members: [
+      "Evelyn Hawke",
+      "Maxwell Sterling",
+      "Ethan Carrington",
+      "Oliver Hayes",
+      "Jasper Blackwell",
+      "Dylan Hawthorne",
+      "Leo Sinclair",
+      "Nathaniel Storm",
+    ],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 2,
+    photo: {
+      type: "verticle",
+      url: "/images/verticle-2.jpg",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 3,
+    photo: {
+      type: "horizontal",
+      url: "/images/horizontal-3.png",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 4,
+    photo: {
+      type: "verticle",
+      url: "/images/verticle-2.jpg",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 5,
+    photo: {
+      type: "verticle",
+      url: "/images/verticle-4.jpg",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 6,
+    photo: {
+      type: "verticle",
+      url: "/images/verticle-5.png",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 7,
+    photo: {
+      type: "verticle",
+      url: "/images/horizontal-3.png",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 8,
+    photo: {
+      type: "verticle",
+      url: "/images/verticle-4.jpg",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 9,
+    photo: {
+      type: "verticle",
+      url: "/images/verticle-5.png",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 10,
+    photo: {
+      type: "verticle",
+      url: "/images/horizontal-3.png",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
+  },
+  {
+    id: 11,
+    photo: {
+      type: "verticle",
+      url: "/images/verticle-2.jpg",
+    },
+    tagged_members: [],
+    likes: 12,
+    owner: "Mateo Pautasso",
+    date: "oct 26",
   },
 ];

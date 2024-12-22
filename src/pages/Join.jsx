@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import hcl_logo from "../assets/hcl-logo.png";
+import hcl_logo from "../assets/png/hcl-logo.png";
 import Button from "../components/Button";
 
 export default function Join() {

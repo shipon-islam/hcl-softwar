@@ -1,16 +1,28 @@
-import { Modal } from "flowbite-react";
-import React, { useState } from "react";
+import Button from "@/components/Button";
+import { ErrorIcon, MailRightIcon } from "@/components/Hcl_Icons";
+import { BoxInput } from "@/components/Input";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { Textarea } from "@/components/ui/textarea";
+import { useState } from "react";
 import { TbMailForward } from "react-icons/tb";
-import Button from "../components/Button";
-import { ErrorIcon, MailRightIcon } from "../components/Hcl_Icons";
-import TextInput from "../components/TextInput";
+
 export default function Contact() {
   const [openSuccessModal, setOpenSuccessModal] = useState(false);
   const [openFailedModal, setOpenFailedModal] = useState(false);
   const handleSend = (e) => {
     e.preventDefault();
     setOpenSuccessModal(true);
-    setOpenFailedModal(true);
+    setTimeout(() => {
+      setOpenSuccessModal(false);
+      setOpenFailedModal(true);
+    }, 1000);
   };
   return (
     <div className="text-hcl-slate layout-padding my-16 md:mx-10 xl:mx-48">
@@ -30,31 +42,21 @@ export default function Contact() {
       </div>
       <form onSubmit={handleSend} className="mt-8 space-y-8">
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-2">
-            <label htmlFor="firstname">First Name*</label>
-            <TextInput type="text" name="firstname" />
-          </div>
-          <div className="space-y-2">
-            <label htmlFor="lastname">Last Name*</label>
-            <TextInput type="text" name="lastname" />
-          </div>
+          <BoxInput label="First Name*" type="text" name="firstname" />
+
+          <BoxInput label="Last Name*" type="text" name="lastname" />
         </div>
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="space-y-2">
-            <label htmlFor="email">Email*</label>
-            <TextInput type="text" name="email" />
-          </div>
-          <div className="space-y-2">
-            <label htmlFor="email">Subject*</label>
-            <TextInput type="text" name="email" />
-          </div>
+          <BoxInput label="Email*" type="text" name="email" />
+
+          <BoxInput label="Subject*" type="text" name="subject" />
         </div>
-        <div>
+        <div className="space-y-2">
           <label htmlFor="message">Message:</label>
-          <textarea
-            className="shadow-custom outline-none focus:border-none focus:outline-none border-none py-2 w-full rounded-md pl-4 placeholder:text-gray-400 h-32"
-            name="message"
-          ></textarea>
+          <Textarea
+            placeholder="Share something about yourself..."
+            className="bg-white resize-none placeholder:text-gray-400 h-28 focus-visible:ring-0 text-2xl"
+          />
         </div>
         <Button
           type="submit"
@@ -64,42 +66,45 @@ export default function Contact() {
           Send
         </Button>
       </form>
-      <Modal
-        show={openSuccessModal}
-        onClose={() => setOpenSuccessModal(false)}
-        size="sm"
-      >
-        <Modal.Header className="border-none py-3" />
-        <Modal.Body className="pt-0 pb-8 grid place-self-center">
-          <div className="text-center space-y-6 px-10">
-            <span className="block w-fit mx-auto">
-              <MailRightIcon fill={true} />
-            </span>
 
-            <h2 className="font-medium">Message sent successfully!</h2>
-            <p>Our team will reach out to you shortly</p>
-            <p className="text-gray-400 pt-8">Thank you!</p>
-          </div>
-        </Modal.Body>
-      </Modal>
-      <Modal
-        show={openFailedModal}
-        onClose={() => setOpenFailedModal(false)}
-        size="sm"
-      >
-        <Modal.Header className="border-none py-3" />
-        <Modal.Body className="pt-0 pb-8 grid place-self-center">
-          <div className="text-center space-y-6 px-16">
-            <span className="block w-fit mx-auto">
-              <ErrorIcon fill={true} />
-            </span>
+      <Dialog open={openSuccessModal} onOpenChange={setOpenSuccessModal}>
+        <DialogTrigger />
+        <DialogContent className=" w-[20rem]">
+          <DialogHeader>
+            <DialogTitle />
+            <DialogDescription className="pt-0 pb-8 grid place-self-center">
+              <div className="text-center space-y-6 px-10">
+                <span className="block w-fit mx-auto">
+                  <MailRightIcon fill={true} />
+                </span>
 
-            <h2 className="font-medium">We’re sorry!</h2>
-            <p>Your message could not be sent</p>
-            <p className="text-gray-400 pt-8">Please try again</p>
-          </div>
-        </Modal.Body>
-      </Modal>
+                <h2 className="font-medium">Message sent successfully!</h2>
+                <p>Our team will reach out to you shortly</p>
+                <p className="text-gray-400 pt-8">Thank you!</p>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+      <Dialog open={openFailedModal} onOpenChange={setOpenFailedModal}>
+        <DialogTrigger />
+        <DialogContent className=" w-[20rem]">
+          <DialogHeader>
+            <DialogTitle />
+            <DialogDescription className="pt-0 pb-8 grid place-self-center">
+              <div className="text-center space-y-6 px-16">
+                <span className="block w-fit mx-auto">
+                  <ErrorIcon fill={true} />
+                </span>
+
+                <h2 className="font-medium">We’re sorry!</h2>
+                <p>Your message could not be sent</p>
+                <p className="text-gray-400 pt-8">Please try again</p>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { RiArrowDownSLine, RiArrowUpSLine } from "react-icons/ri";
@@ -33,7 +33,7 @@ export default function Sidebar() {
               className={`text-lg  text-gray-400 hover:text-white w-full block ${
                 pathname === "/share" && "active-side-nav"
               }`}
-              to="/share"
+              to="/shared-gallery"
             >
               Shared Gallery
             </Link>

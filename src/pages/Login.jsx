@@ -1,13 +1,13 @@
+import hcl_logo from "@/assets/png/hcl-logo.png";
+import Button from "@/components/Button";
+import Card from "@/components/Card";
+import { BoxInput } from "@/components/Input";
 import { Link } from "react-router-dom";
-import hcl_logo from "../assets/hcl-logo.png";
-import Button from "../components/Button";
-import Card from "../components/Card";
-import TextInput from "../components/TextInput";
 
 export default function Login() {
   return (
     <div
-      className={`bg-[#F9F9F9] md:bg-[url('login-bg.png')] min-h-screen w-full bg-cover bg-center md:bg-hch-slate-2 grid place-items-center`}
+      className={`bg-[#F9F9F9] md:bg-[url('/images/login-bg.png')] min-h-screen w-full bg-cover bg-center md:bg-hch-slate-2 grid place-items-center`}
     >
       <Card className="bg-[#F9F9F9] w-full md:w-[25rem]  h-fit md:rounded-md ">
         <form>
@@ -21,20 +21,20 @@ export default function Login() {
           </p>
           <div className="space-y-6">
             <div>
-              <TextInput name="email" placeholder="Email" type="text" />
-              <p className="text-hcl-purple text-sm mt-2 ml-1">
-                E-mail not found. Please try again
-              </p>
+              <BoxInput
+                error="E-mail not found. Please try again"
+                name="email"
+                placeholder="Email"
+                type="text"
+              />
             </div>
             <div>
-              <TextInput
+              <BoxInput
                 name="password"
+                error="Wrong password. Please try again"
                 placeholder="Password"
                 type="password"
               />
-              <p className="text-hcl-purple text-sm mt-2 ml-1">
-                Wrong password. Please try again
-              </p>
             </div>
 
             <Button type="submit">sign in</Button>

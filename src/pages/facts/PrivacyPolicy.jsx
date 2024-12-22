@@ -1,5 +1,5 @@
-import { ToggleSwitch } from "flowbite-react";
-import React, { useState } from "react";
+import { Switch } from "@/components/ui/switch";
+import { useState } from "react";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { cookies, policies } from "../../constants";
 
@@ -75,10 +75,12 @@ export default function PrivacyPolicy() {
                 {cookie.answer}
               </p>
 
-              <ToggleSwitch
+              <Switch
                 className="absolute left-96 top-0 z-50"
                 checked={cookieState.find((c) => c.id === cookie.id).isChecked}
-                onChange={(checked) => handleToggleChange(cookie.id, checked)}
+                onCheckedChange={(checked) =>
+                  handleToggleChange(cookie.id, checked)
+                }
               />
             </li>
           ))}

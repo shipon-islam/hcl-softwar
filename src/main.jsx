@@ -4,6 +4,7 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./fonts.css";
 import "./index.css";
+import "./lib/removeWarning.js";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>

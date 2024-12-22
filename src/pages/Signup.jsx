@@ -1,13 +1,28 @@
+import hcl_logo from "@/assets/png/hcl-logo.png";
+import Button from "@/components/Button";
+import { MailVerifyIcon } from "@/components/Hcl_Icons";
+import { BoxInput } from "@/components/Input";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import hcl_logo from "../assets/hcl-logo.png";
-import Button from "../components/Button";
-import TextInput from "../components/TextInput";
 
 export default function Signup() {
+  const [openSuccessModal, setOpenSuccessModal] = useState(false);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setOpenSuccessModal(true);
+  };
   return (
     <section className="grid md:grid-cols-2 min-h-screen">
       <div
-        className={`md:bg-[url('login-bg.png')]  w-full bg-cover bg-center md:bg-hch-slate-2 hidden md:block`}
+        className={`md:bg-[url('/images/login-bg.png')]  w-full bg-cover bg-center md:bg-hch-slate-2 hidden md:block`}
       >
         <img
           className="invert brightness-0 contrast-200 mt-10 ml-8"
@@ -19,31 +34,41 @@ export default function Signup() {
         </h5>
       </div>
       <div className="bg-[#F9F9F9] w-full p-8 grid place-items-center">
-        <form>
+        <form onSubmit={handleSubmit}>
           <img className="mx-auto mb-20 md:hidden" src={hcl_logo} alt="logo" />
           <p className="text-hcl-slate font-semibold pb-8 md:text-center text-lg">
             Please fill in your contact details to continue using the app
           </p>
           <div className="space-y-6">
             <div className="grid  sm:grid-cols-2 space-y-6 sm:space-y-0 gap-x-4">
-              <TextInput
-                name="firstname"
-                placeholder="First Name"
+              <BoxInput name="firstname" placeholder="First Name" type="text" />
+              <BoxInput name="lastname" placeholder="Last Name" type="text" />
+            </div>
+            <div className="grid  sm:grid-cols-2 space-y-6 sm:space-y-0 gap-x-4">
+              <BoxInput name="phone" placeholder="Phone" type="text" />
+              <BoxInput name="email" placeholder="E-mail" type="email" />
+            </div>
+            <div className="grid  sm:grid-cols-2 space-y-6 sm:space-y-0 gap-x-4">
+              <BoxInput name="position" placeholder="Position" type="text" />
+              <BoxInput name="linkedin" placeholder="Linkedin" type="text" />
+            </div>
+            <div className="grid  sm:grid-cols-2 space-y-6 sm:space-y-0 gap-x-4">
+              <BoxInput name="country" placeholder="Country" type="text" />
+              <BoxInput name="email" placeholder="E-mail" type="text" />
+            </div>
+            <div className="grid  sm:grid-cols-2 space-y-6 sm:space-y-0 gap-x-4">
+              <BoxInput
+                error="8-character min. requiered"
+                name="password"
+                placeholder="Password"
                 type="text"
               />
-              <TextInput name="lastname" placeholder="Last Name" type="text" />
-            </div>
-            <div className="grid  sm:grid-cols-2 space-y-6 sm:space-y-0 gap-x-4">
-              <TextInput name="email" placeholder="E-mail" type="email" />
-              <TextInput name="phone" placeholder="Phone" type="text" />
-            </div>
-            <div className="grid  sm:grid-cols-2 space-y-6 sm:space-y-0 gap-x-4">
-              <TextInput name="company" placeholder="Compnay" type="text" />
-              <TextInput name="position" placeholder="Position" type="text" />
-            </div>
-            <div className="grid  sm:grid-cols-2 space-y-6 sm:space-y-0 gap-x-4">
-              <TextInput name="linkedin" placeholder="Linkedin" type="text" />
-              <TextInput name="country" placeholder="Country" type="text" />
+              <BoxInput
+                error="Password fields do not match"
+                name="cpassword"
+                placeholder="Confirm Password"
+                type="text"
+              />
             </div>
 
             <div className="space-y-4">
@@ -123,6 +148,39 @@ export default function Signup() {
           </div>
         </form>
       </div>
+      <Dialog open={openSuccessModal} onOpenChange={setOpenSuccessModal}>
+        <DialogTrigger />
+        <DialogContent className=" w-[25rem]">
+          <DialogHeader>
+            <DialogTitle />
+            <DialogDescription className="pt-0 pb-8 grid place-self-center">
+              <div className="text-center space-y-6 px-10">
+                <span className="block w-fit mx-auto">
+                  <MailVerifyIcon fill={true} />
+                </span>
+
+                <h2 className="font-bold text-xl text-hcl-slate">
+                  Verify your email address
+                </h2>
+                <p className="text-hcl-slate text-[1rem]">
+                  We sent a confirmation email to:
+                  <a href="mailto:michaeladams@hclsoftware.com">
+                    michaeladams@hclsoftware.com
+                  </a>
+                </p>
+                <p className="text-hcl-slate text-[1rem]">
+                  Before we get started, we’ll need to verify you´re the owner
+                  of this account
+                </p>
+                <p className="text-hcl-slate text-[1rem]">
+                  If not, please disregard this email
+                </p>
+                <Button className="w-fit">Verify Email</Button>
+              </div>
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

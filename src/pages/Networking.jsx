@@ -1,89 +1,7 @@
-import { Card } from "flowbite-react";
-import React from "react";
+import { network_peoples } from "@/constants";
+
+import { Card, CardContent } from "@/components/ui/card";
 import { SlEarphonesAlt } from "react-icons/sl";
-import avatar from "../assets/avatar.png";
-import gaston from "../assets/images/notify-man.webp";
-
-const network_peoples = [
-  {
-    id: 1,
-    name: "Gaston Goyret",
-    company: "HCL Software",
-    title: "AVP",
-    photo: gaston,
-  },
-  {
-    id: 2,
-    name: "Rodrigo Plumari G.",
-    company: "Bineo",
-    title: "CIO",
-    photo: avatar,
-  },
-  {
-    id: 3,
-    name: "Rommel Flores",
-    company: "Grupo Comercial Control",
-    title: "VP e-commerce",
-    photo: avatar,
-  },
-  {
-    id: 4,
-    name: "Nocolas Geronimo",
-    company: "Dportenis",
-    title: "Director AI",
-    photo: avatar,
-  },
-  {
-    id: 5,
-    name: "Karlo Mondragon",
-    company: "Grupo Salinas",
-    title: "CHRO",
-    photo: avatar,
-  },
-  {
-    id: 6,
-    name: "Antonio Antunez",
-    company: "Grupo Comercial Control",
-    title: "Director General",
-    photo: avatar,
-  },
-  {
-    id: 7,
-    name: "Rodrigo Plumari G.",
-    company: "Bineo",
-    title: "CIO",
-    photo: avatar,
-  },
-  {
-    id: 8,
-    name: "Rommel Flores",
-    company: "Grupo Comercial Control",
-    title: "VP e-commerce",
-    photo: avatar,
-  },
-  {
-    id: 9,
-    name: "Nocolas Geronimo",
-    company: "Dportenis",
-    title: "Director AI",
-    photo: avatar,
-  },
-  {
-    id: 10,
-    name: "Karlo Mondragon",
-    company: "Grupo Salinas",
-    title: "CHRO",
-    photo: avatar,
-  },
-
-  {
-    id: 11,
-    name: "Karlo Mondragon",
-    company: "Grupo Salinas",
-    title: "CHRO",
-    photo: avatar,
-  },
-];
 
 export default function Networking() {
   return (
@@ -99,21 +17,20 @@ export default function Networking() {
         {network_peoples.length > 0 ? (
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-8 gap-y-24 mt-24">
             {network_peoples.map((people) => (
-              <Card
-                key={people.id}
-                className="text-center relative p-0 flowbite-card"
-              >
-                <img
-                  className="w-20 h-20 rounded-full object-cover mx-auto absolute -top-14 left-0 right-0"
-                  src={people.photo}
-                  alt="user"
-                />
-                <div className="mt-6">
-                  <h1>{people.name}</h1>
-                  <small>{people.company}</small>
-                </div>
+              <Card key={people.id}>
+                <CardContent className="text-center relative p-0 flowbite-card">
+                  <img
+                    className="w-20 h-20 rounded-full object-cover mx-auto absolute -top-14 left-0 right-0"
+                    src={people.photo}
+                    alt="user"
+                  />
+                  <div className="mt-6">
+                    <h1>{people.name}</h1>
+                    <small>{people.company}</small>
+                  </div>
 
-                <address className="pb-2">{people.title}</address>
+                  <address className="pb-2">{people.title}</address>
+                </CardContent>
               </Card>
             ))}
           </div>
