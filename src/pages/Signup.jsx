@@ -1,7 +1,7 @@
 import hcl_logo from "@/assets/png/hcl-logo.png";
-import Button from "@/components/Button";
 import { MailVerifyIcon } from "@/components/Hcl_Icons";
 import { BoxInput } from "@/components/Input";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,

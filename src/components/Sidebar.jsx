@@ -11,7 +11,7 @@ export default function Sidebar() {
   const hiddenPath = ["/login", "/signup", "/join"];
   return (
     <div
-      className={`sticky top-[4rem] hidden h-[calc(100vh-4rem)] w-[284px] md:flex md:shrink-0 md:flex-col md:justify-between bg-hcl-slate ${
+      className={`sticky top-[4rem] hidden h-[calc(100vh-4rem)] w-[200px] lg:w-[284px] md:flex md:shrink-0 md:flex-col md:justify-between bg-hcl-slate ${
         hiddenPath.includes(pathname) && "md:hidden"
       }`}
     >

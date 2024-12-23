@@ -193,10 +193,11 @@ export default function SharedGallery() {
               <CardContent className="pb-2 px-0">
                 <div className="relative">
                   <img
-                    className="object-cover  w-full rounded-md"
+                    className="h-auto max-w-full rounded-lg"
                     src={post?.photo?.url}
-                    alt="flag"
+                    alt=""
                   />
+
                   <div className="flex justify-between w-full text-[0.7rem] absolute bottom-1  px-1">
                     <div className="flex justify-center items-center gap-x-1  bg-white/80 px-1 rounded-md">
                       <button>

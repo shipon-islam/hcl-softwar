@@ -1,13 +1,20 @@
-import avatar from "../assets/png/avatar.png";
+import avatar from "@/assets/png/avatar.png";
 import {
+  BulbIcon,
+  CarIcon,
   DashboardIcon,
+  DinnerIcon,
   EventIcon,
   HomeIcon,
   MeetingIcon,
   NetworkingIcon,
   PeopleIcon,
+  PracticeIcon,
   SettingsIcon,
-} from "../components/Hcl_Icons";
+  StreetIcon,
+  WalkingManIcon,
+} from "@/components/Hcl_Icons";
+
 export const navItems = [
   {
     name: "Home",
@@ -15,8 +22,8 @@ export const navItems = [
     Icon: HomeIcon,
   },
   {
-    name: "Album",
-    href: "/album",
+    name: "Share-gallery",
+    href: "/shared-gallery",
     Icon: DashboardIcon,
   },
   {
@@ -452,5 +459,72 @@ export const gallery_posts = [
     likes: 12,
     owner: "Mateo Pautasso",
     date: "oct 26",
+  },
+];
+export const eventSchedules = [
+  {
+    id: 1,
+    title: "Briefing Session",
+    desc: "Briefing with the HCL Software team ahead of a big day at the track.",
+    icon: BulbIcon,
+    location: "C053, Mandarin Oriental",
+    start_time: "8:00 AM",
+    end_time: "8:45 AM",
+    date_time: "16d 23h 5m 41s",
+    isEnd: true,
+  },
+  {
+    id: 2,
+    title: "Transportation to Yas Marina Circuit",
+    desc: "Transportation to Yas Marina Circuit Transportation to the Yas Marina Circuit via Luxury Van",
+    icon: CarIcon,
+    start_time: "8:45 AM",
+    end_time: "10:30 AM",
+    isEnd: false,
+  },
+  {
+    id: 3,
+    title: "Paddock Club Pit Lane Walk",
+    desc: "Box, box, box. Get a personal look at the pit lane",
+    icon: WalkingManIcon,
+    start_time: "12:00 PM",
+    end_time: "1:00 PM",
+    isEnd: false,
+  },
+  {
+    id: 4,
+    title: "Paddock Club Track Tour",
+    desc: "Exclusive tour of the track. Don't miss out on this opportunity!",
+    icon: StreetIcon,
+    start_time: "1:00 PM",
+    end_time: "2:00 PM",
+    isEnd: false,
+  },
+  {
+    id: 5,
+    title: "Practice Session 2",
+    desc: "Make your way over to the best seats in the house. Join us for the second round of free practice in Ferrari's Paddock",
+    icon: PracticeIcon,
+    start_time: "5:00 PM",
+    end_time: "6:00 PM",
+    isEnd: false,
+  },
+  {
+    id: 6,
+    title: "Transportation to Mandarin Oriental",
+    desc: "It's time to head back to the hotel for a cool-down session after a hard day of racing.",
+    icon: CarIcon,
+    start_time: "6:00 AM",
+    end_time: "8:00 AM",
+    isEnd: false,
+  },
+  {
+    id: 7,
+    title: "Practice Session 2",
+    desc: "Make your way over to the best seats in the house. Join us for the second round of free practice in Ferrari's Paddock",
+    icon: DinnerIcon,
+    start_time: "8:30 AM",
+    end_time: "11:30 AM",
+    isEnd: false,
   },
 ];

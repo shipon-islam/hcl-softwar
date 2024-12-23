@@ -1,5 +1,5 @@
 import hcl_logo from "@/assets/png/hcl-logo.png";
-import Button from "@/components/Button";
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -13,7 +13,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-
 import { notificationApi } from "@/constants";
 import { X } from "lucide-react";
 import { useState } from "react";
@@ -56,27 +55,7 @@ export default function Header() {
                 </div>
               </PopoverContent>
             </Popover>
-            {/* <Dialog>
-              <DialogTrigger>
-                <button
-                  
-                  className="rounded-full p-1 shadow-md hidden md:block "
-                >
-                  <NotificationIcon className="text-hcl-slate" />
-                </button>
-              </DialogTrigger>
-              <DialogContent className="top-20 right-10 sm:top-72 sm:right-10 w-[20rem]">
-                <DialogHeader>
-                  <DialogTitle />
-                  <DialogDescription>
-                    <div className=" text-hcl-slate max-h-[calc(100vh-10rem)] overflow-y-auto scrollbar-thin pb-8 px-2">
-                      <h1 className="font-bold text-xl">Notifications</h1>
-                      <NotificationList notificationApi={notificationApi} />
-                    </div>
-                  </DialogDescription>
-                </DialogHeader>
-              </DialogContent>
-            </Dialog> */}
+
             <Popover>
               <PopoverTrigger>
                 <button className="flex items-center">
@@ -138,8 +117,10 @@ export default function Header() {
               </PopoverContent>
             </Popover>
           </div>
+          <Link to="/">
+            <img src={hcl_logo} alt="logo" className="w-fit h-fit" />
+          </Link>
 
-          <img src={hcl_logo} alt="logo" className="w-fit h-fit" />
           <Link
             to="/notification"
             className="rounded-full p-1 shadow-md md:hidden"

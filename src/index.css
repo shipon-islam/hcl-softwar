@@ -18,18 +18,22 @@
   .notification-title bold {
     @apply font-medium px-1.5;
   }
+
+  .datelink:hover button {
+    @apply bg-hcl-slate text-white;
+  }
+  .datelink.active button {
+    @apply bg-hcl-slate text-white;
+  }
+  .datelink:hover span {
+    @apply text-hcl-slate;
+  }
+
+  .datelink.active span {
+    @apply text-hcl-slate;
+  }
 }
 
-.scrollbar-thin::-webkit-scrollbar {
-  width: 4px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background-color: rgb(238, 236, 233); /* Tailwind Purple-300 */
-  border-radius: 9999px;
-}
-.scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background-color: rgb(187, 178, 178); /* Tailwind Purple-300 */
-}
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -92,4 +96,14 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+.scrollbar-thin::-webkit-scrollbar {
+  width: 4px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: rgb(238, 236, 233);
+  border-radius: 9999px;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(187, 178, 178);
 }

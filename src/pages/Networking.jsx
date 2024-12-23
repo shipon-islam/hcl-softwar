@@ -15,10 +15,10 @@ export default function Networking() {
           </p>
         </div>
         {network_peoples.length > 0 ? (
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-8 gap-y-24 mt-24">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-24 mt-24">
             {network_peoples.map((people) => (
               <Card key={people.id}>
-                <CardContent className="text-center relative p-0 flowbite-card">
+                <CardContent className="text-center relative p-2">
                   <img
                     className="w-20 h-20 rounded-full object-cover mx-auto absolute -top-14 left-0 right-0"
                     src={people.photo}
@@ -29,7 +29,9 @@ export default function Networking() {
                     <small>{people.company}</small>
                   </div>
 
-                  <address className="pb-2">{people.title}</address>
+                  <span className="pb-2 font-italic text-sm">
+                    {people.title}
+                  </span>
                 </CardContent>
               </Card>
             ))}

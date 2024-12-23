@@ -1,7 +1,7 @@
 import hcl_logo from "@/assets/png/hcl-logo.png";
-import Button from "@/components/Button";
 import Card from "@/components/Card";
 import { BoxInput } from "@/components/Input";
+import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 export default function Login() {

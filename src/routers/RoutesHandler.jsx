@@ -1,3 +1,4 @@
+import Events from "@/pages/Events";
 import Profile from "@/pages/Profile";
 import { Route, Routes } from "react-router-dom";
 import Contact from "../pages/Contact";
@@ -24,6 +25,7 @@ export default function RoutesHandler() {
       <Route path="/contact" element={<Contact />} />
       <Route path="/notification" element={<Notification />} />
       <Route path="/shared-gallery" element={<SharedGallery />} />
+      <Route path="/events/:id" element={<Events />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/facts">
         <Route path="privacy-policy" element={<PrivacyPolicy />} />

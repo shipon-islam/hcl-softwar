@@ -7,9 +7,9 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import Button from "@/components/Button";
 import { DeleteIcon, PhotoIcon, UnlockIcon } from "@/components/Hcl_Icons";
 import { BoxInput, TextInput } from "@/components/Input";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
@@ -30,7 +30,7 @@ export default function Profile() {
     }, 500);
   };
   return (
-    <div className="text-hcl-slate layout-padding my-16 md:mx-10 xl:mx-24 grid grid-cols-[2fr_3fr] items-baseline gap-8">
+    <div className="text-hcl-slate layout-padding my-16 md:mx-10 xl:mx-24 grid md:grid-cols-[2fr_3fr] items-baseline gap-8">
       <Card className="w-[20rem]">
         <CardContent>
           <div className="text-center my-4">
@@ -152,14 +152,14 @@ export default function Profile() {
             placeholder="Restrictions"
             className="defalt-rm bg-white resize-none placeholder:text-gray-400 h-28"
           />
-          <Button>save changes</Button>
+          <Button>Save changes</Button>
         </form>
         <h1 className="font-bold my-5">Account</h1>
 
         <Dialog>
           <DialogTrigger className="block mt-4">
             <Button className="bg-slate-600/50 text-hcl-slate">
-              change password
+              Change password
             </Button>
           </DialogTrigger>
           <DialogContent className="w-[25rem]">
