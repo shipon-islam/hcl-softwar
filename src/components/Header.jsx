@@ -13,12 +13,12 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { notificationApi } from "@/constants";
 import { X } from "lucide-react";
 import { useState } from "react";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Link, useLocation } from "react-router-dom";
 
+import { notificationApi } from "@/constants";
 import {
   LogoutIcon,
   MenubtnIcon,
@@ -32,25 +32,25 @@ export default function Header() {
   const { pathname } = useLocation();
   const hiddenPath = ["/login", "/signup", "/join"];
   return (
-    <header className="sticky z-50 top-0 text-hcl-slate">
+    <header className="sticky z-50 top-0 text-hcl-primary">
       <nav className={`${hiddenPath.includes(pathname) && "hidden"}`}>
         <div className="flex md:flex-row-reverse justify-between items-center w-full h-16 border-b  bg-white layout-wrapper layout-padding shadow-custom">
           <div className="flex items-center gap-x-8">
             <Popover open={isOpen} onOpenChange={setIsOpen}>
               <PopoverTrigger>
                 <button className="rounded-full p-1 shadow-md hidden md:block ">
-                  <NotificationIcon className="text-hcl-slate" />
+                  <NotificationIcon />
                 </button>
               </PopoverTrigger>
-              <PopoverContent className="relative w-[28rem] ">
+              <PopoverContent className="relative w-[28rem] 2xl:w-[33rem] ">
                 <button
-                  onClick={() => setIsOpen(false)} // Close popover
+                  onClick={() => setIsOpen(false)}
                   className="absolute top-2 right-2 text-sm text-gray-600"
                 >
                   <X />
                 </button>
                 <h1 className="font-bold text-xl py-2">Notifications</h1>
-                <div className=" text-hcl-slate max-h-[calc(100vh-10rem)] overflow-y-auto scrollbar-thin pb-8 px-2">
+                <div className="max-h-[calc(100vh-10rem)] overflow-y-auto scrollbar-thin pb-8 px-2">
                   <NotificationList notificationApi={notificationApi} />
                 </div>
               </PopoverContent>
@@ -59,7 +59,7 @@ export default function Header() {
             <Popover>
               <PopoverTrigger>
                 <button className="flex items-center">
-                  <MenubtnIcon className="md:hidden" />
+                  <MenubtnIcon className="md:hidden relative right-8" />
                   <div className="hidden md:flex gap-x-2 items-center ">
                     <span className="bg-gray-500 block px-1.5 py-1 rounded-full">
                       <PeopleIcon className="w-3 text-white" />
@@ -93,7 +93,7 @@ export default function Header() {
                       <LogoutIcon className="w-4" />
                       Log Out
                     </DialogTrigger>
-                    <DialogContent className="w-[20rem]">
+                    <DialogContent className="w-[29rem]">
                       <DialogHeader>
                         <DialogTitle />
                         <DialogDescription>
@@ -102,12 +102,16 @@ export default function Header() {
                               <LogoutIcon fill={true} />
                             </span>
 
-                            <h2 className="font-medium text-xl">
-                              Are you sure?
-                            </h2>
-                            <p>This will end your session</p>
-                            <p>You can login again later</p>
-                            <Button className="w-fit">Log Out</Button>
+                            <h2 className="font-bold text-xl">Are you sure?</h2>
+                            <p className="text-hcl-black text-lg">
+                              This will end your session
+                            </p>
+                            <p className="text-hcl-lite pb-8">
+                              You can login again later
+                            </p>
+                            <Button className=" bg-hcl-primary px-8">
+                              Log Out
+                            </Button>
                           </div>
                         </DialogDescription>
                       </DialogHeader>
@@ -125,9 +129,12 @@ export default function Header() {
             to="/notification"
             className="rounded-full p-1 shadow-md md:hidden"
           >
-            <NotificationIcon className="text-hcl-slate" />
+            <NotificationIcon />
           </Link>
         </div>
+        {isOpen && (
+          <div className="h-screen w-full bg-hcl-primary/50 fixed top-0 left-0"></div>
+        )}
       </nav>
     </header>
   );

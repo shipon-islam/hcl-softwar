@@ -22,7 +22,7 @@ export default function Signup() {
   return (
     <section className="grid md:grid-cols-2 min-h-screen">
       <div
-        className={`md:bg-[url('/images/login-bg.png')]  w-full bg-cover bg-center md:bg-hch-slate-2 hidden md:block`}
+        className={`md:bg-[url('/images/login-bg.png')]  w-full bg-cover bg-center md:bg-hcl-primary-2 hidden md:block`}
       >
         <img
           className="invert brightness-0 contrast-200 mt-10 ml-8"
@@ -36,7 +36,7 @@ export default function Signup() {
       <div className="bg-[#F9F9F9] w-full p-8 grid place-items-center">
         <form onSubmit={handleSubmit}>
           <img className="mx-auto mb-20 md:hidden" src={hcl_logo} alt="logo" />
-          <p className="text-hcl-slate font-semibold pb-8 md:text-center text-lg">
+          <p className="font-semibold pb-8 md:text-center text-xl w-[55%] mx-auto">
             Please fill in your contact details to continue using the app
           </p>
           <div className="space-y-6">
@@ -71,42 +71,41 @@ export default function Signup() {
               />
             </div>
 
-            <div className="space-y-4">
-              <div className="flex items-start space-x-2">
+            <div className="space-y-4 text-[#706C6C] text-sm">
+              <div className="grid grid-cols-[20px_1fr]">
                 <input
-                  type="radio"
-                  name="agreement"
                   id="option1"
-                  className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-md "
+                  type="checkbox"
+                  value=""
+                  className="mt-1 custom-checkbox"
                 />
-                <label htmlFor="option1" className="text-gray-700">
-                  <p className="font-medium">
+                <label htmlFor="option1" className="ms-2 ">
+                  <p>
                     I am not a U.S Federal Government employee or agency, nor am
                     I submitting this form on behalf of one.
                   </p>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm">
                     HCL provides software and services to the US Federal
                     Government through its partner Four, Inc.
                   </span>
                 </label>
               </div>
-
-              <div className="flex items-start space-x-2">
+              <div className="grid grid-cols-[20px_1fr]">
                 <input
-                  type="radio"
-                  name="agreement"
                   id="option2"
-                  className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-md "
+                  type="checkbox"
+                  value=""
+                  className=" mt-1 custom-checkbox"
                 />
-                <label htmlFor="option2" className="text-gray-700">
-                  <p className="font-medium">
+                <label htmlFor="option2" className="ms-2 ">
+                  <p>
                     I agree to HCLSoftware&apos;s{" "}
                     <a href="#" className="text-blue-600 underline">
                       Privacy Statement
                     </a>
                     .
                   </p>
-                  <span className="text-sm text-gray-500">
+                  <span className="text-sm">
                     HCL is collecting this information for its legitimate
                     interests, and you acknowledge that we may contact you about
                     products or services that could be of interest to you. You
@@ -114,15 +113,15 @@ export default function Signup() {
                   </span>
                 </label>
               </div>
-              <div className="flex items-start space-x-2">
+              <div className="grid grid-cols-[30px_1fr]">
                 <input
-                  type="radio"
-                  name="agreement"
-                  id="option2"
-                  className="h-5 w-5 text-blue-600 focus:ring-blue-500 border-gray-300 rounded-md "
+                  id="option3"
+                  type="checkbox"
+                  value=""
+                  className="mt-1 custom-checkbox"
                 />
-                <label htmlFor="option2" className="text-gray-700">
-                  <p className="font-medium">I have a dietary restriction</p>
+                <label htmlFor="option3" className="">
+                  <p className="">I have a dietary restriction</p>
                 </label>
               </div>
             </div>
@@ -133,8 +132,11 @@ export default function Signup() {
             ></textarea>
             <p className="text-sm">** Required fields</p>
 
-            <Button type="submit" className="md:w-[40%] mx-auto md:block">
-              sign in
+            <Button
+              type="submit"
+              className="md:w-[40%] mx-auto md:block text-lg h-12 bg-hcl-primary hover:bg-hcl-secondary"
+            >
+              Sign In
             </Button>
           </div>
           <div className="flex text-md justify-center mt-6 font-medium text-gray-500 dark:text-hcl-slate">

@@ -333,7 +333,7 @@ export const gallery_posts = [
   {
     id: 1,
     photo: {
-      type: "verticle",
+      type: "horizontal",
       url: "/images/verticle-1.jpg",
     },
     tagged_members: [
@@ -342,9 +342,6 @@ export const gallery_posts = [
       "Ethan Carrington",
       "Oliver Hayes",
       "Jasper Blackwell",
-      "Dylan Hawthorne",
-      "Leo Sinclair",
-      "Nathaniel Storm",
     ],
     likes: 12,
     owner: "Mateo Pautasso",
@@ -526,5 +523,235 @@ export const eventSchedules = [
     start_time: "8:30 AM",
     end_time: "11:30 AM",
     isEnd: false,
+  },
+];
+
+export const dateLinks = [
+  {
+    id: 1,
+    day: "Thusday",
+    date: "December 5, 2024",
+  },
+  {
+    id: 2,
+    day: "Friday",
+    date: "December 6, 2024",
+  },
+  {
+    id: 3,
+    day: "Saturday",
+    date: "December 7, 2024",
+  },
+  {
+    id: 4,
+    day: "Sunday",
+    date: "December 8, 2024",
+  },
+];
+export const nameLinks = [
+  {
+    id: 1,
+    day: "Max Johnson",
+    date: "Product #0000001",
+  },
+  {
+    id: 2,
+    day: "David Williams",
+    date: "Product #0000002",
+  },
+  {
+    id: 3,
+    day: "Michael Brown",
+    date: "Product #0000003",
+  },
+  {
+    id: 4,
+    day: "Lucas Feldman",
+    date: "Product #0000003",
+  },
+];
+export const eventsAreas = [
+  {
+    id: 1,
+    title: "Les Dangereux",
+    desc: "Mamsha Al Saadiyat - Jacques Chirac Street Al Saadiyat Island - Abu Dhabi United Arab Emirates",
+    photo: "/images/event_activity-1.png",
+  },
+  {
+    id: 2,
+    title: "Oak Room",
+    desc: "The Abu Dhabi edition, Marina - Al Bateen Abu Dhabi United Arab Emirates",
+    photo: "/images/event_activity-2.png",
+  },
+  {
+    id: 3,
+    title: "Les Dangereux",
+    desc: "Emirates Palace Mandarin Oriental- West Corniche Road Abu Dhabi United Arab Emirates",
+    photo: "/images/event_activity-3.png",
+  },
+];
+export const time_fixers = [
+  {
+    id: 1,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 2,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 3,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 4,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 5,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 6,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 7,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 8,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 9,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+
+  {
+    id: 10,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 11,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 12,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 13,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 14,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 15,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 16,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 17,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 18,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 19,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 20,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 21,
+    time: "08:00",
+    disable: false,
+    selected: true,
+  },
+  {
+    id: 22,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 23,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 24,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 25,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 26,
+    time: "08:00",
+    disable: false,
+    selected: false,
+  },
+  {
+    id: 27,
+    time: "08:00",
+    disable: false,
+    selected: false,
   },
 ];

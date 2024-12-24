@@ -9,7 +9,7 @@ export function MobileNavbar() {
     <nav
       className={`${
         hiddenPath.includes(pathname) && "hidden"
-      } fixed bottom-0 left-0 z-50  w-full  md:hidden bg-hcl-slate h-14`}
+      } fixed bottom-0 left-0 z-50  w-full  md:hidden bg-hcl-primary h-14`}
     >
       <div className="mx-auto h-full flex max-w-md items-center justify-around px-4 ">
         {navItems.map((item) => {

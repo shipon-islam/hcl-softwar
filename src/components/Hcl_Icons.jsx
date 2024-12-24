@@ -868,3 +868,29 @@ export const FailedEventIcon = ({ className }) => (
     </defs>
   </svg>
 );
+export const CheckIcon = ({ className }) => (
+  <svg
+    width="27"
+    height="27"
+    viewBox="0 0 24 25"
+    className={className}
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g clipPath="url(#clip0_106_670)">
+      <path
+        d="M4.94775 18.3127H18.8019V20.2918H4.94775V18.3127ZM9.49984 15.6408L4.94775 11.0887L6.92692 9.2085L9.49984 11.7814L16.8228 4.4585L18.8019 6.43766L9.49984 15.6408Z"
+        fill="white"
+      />
+    </g>
+    <defs>
+      <clipPath id="clip0_106_670">
+        <rect
+          width="23.75"
+          height="23.75"
+          fill="white"
+          transform="translate(0 0.5)"
+        />
+      </clipPath>
+    </defs>
+  </svg>
+);

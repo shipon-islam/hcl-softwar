@@ -1,6 +1,6 @@
 export default function EventAccommodation() {
   return (
-    <div>
+    <div className="my-10">
       <img
         className="aspect-video	w-full h-48 rounded-md "
         src="/images/dubai_white_noise.png"

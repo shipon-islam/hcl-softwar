@@ -11,12 +11,12 @@ export default function Sidebar() {
   const hiddenPath = ["/login", "/signup", "/join"];
   return (
     <div
-      className={`sticky top-[4rem] hidden h-[calc(100vh-4rem)] w-[200px] lg:w-[284px] md:flex md:shrink-0 md:flex-col md:justify-between bg-hcl-slate ${
+      className={`sticky top-[4rem] hidden h-[calc(100vh-4rem)] w-[200px] lg:w-[250px] xl:w-[300px] 2xl:w-[350px] md:flex md:shrink-0 md:flex-col md:justify-between bg-hcl-primary ${
         hiddenPath.includes(pathname) && "md:hidden"
       }`}
     >
       <div className="text-white">
-        <ul className="mt-28 space-y-6 ml-8">
+        <ul className="mt-28 space-y-12 ml-8 xl:ml-10 2xl:ml-14">
           <li>
             <Link
               className={`text-lg  text-gray-400 hover:text-white w-full block ${
@@ -31,7 +31,7 @@ export default function Sidebar() {
           <li>
             <Link
               className={`text-lg  text-gray-400 hover:text-white w-full block ${
-                pathname === "/share" && "active-side-nav"
+                pathname === "/shared-gallery" && "active-side-nav"
               }`}
               to="/shared-gallery"
             >
@@ -118,39 +118,38 @@ export default function Sidebar() {
             )}
           </li>
         </ul>
-      </div>
-
-      <div className="flex justify-center items-center gap-4 mb-8 text-white text-xl">
-        <a
-          className="hover:text-hcl-blue transition-colors duration-300"
-          href="#"
-        >
-          <TbWorld />
-        </a>
-        <a
-          className="hover:text-hcl-blue transition-colors duration-300"
-          href="#"
-        >
-          <FaXTwitter />
-        </a>
-        <a
-          className="hover:text-hcl-blue transition-colors duration-300"
-          href="#"
-        >
-          <FaInstagram />
-        </a>
-        <a
-          className="hover:text-hcl-blue transition-colors duration-300"
-          href="#"
-        >
-          <FaLinkedin />
-        </a>
-        <a
-          className="hover:text-hcl-blue transition-colors duration-300"
-          href="#"
-        >
-          <FaFacebook />
-        </a>
+        <div className="flex justify-center items-center gap-4 mt-10 text-xl">
+          <a
+            className="hover:text-hcl-blue transition-colors duration-300"
+            href="#"
+          >
+            <TbWorld />
+          </a>
+          <a
+            className="hover:text-hcl-blue transition-colors duration-300"
+            href="#"
+          >
+            <FaXTwitter />
+          </a>
+          <a
+            className="hover:text-hcl-blue transition-colors duration-300"
+            href="#"
+          >
+            <FaInstagram />
+          </a>
+          <a
+            className="hover:text-hcl-blue transition-colors duration-300"
+            href="#"
+          >
+            <FaLinkedin />
+          </a>
+          <a
+            className="hover:text-hcl-blue transition-colors duration-300"
+            href="#"
+          >
+            <FaFacebook />
+          </a>
+        </div>
       </div>
     </div>
   );

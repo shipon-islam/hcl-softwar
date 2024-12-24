@@ -1,11 +1,9 @@
-import React from "react";
-
 export default function AboutUs() {
   return (
-    <div className=" text-hcl-slate layout-padding my-16 md:mx-10 xl:mx-48">
+    <div className="layout-padding mt-32 mb-16 md:mx-10 xl:mx-24 max-w-[65rem] mx-auto">
       <div>
-        <h1 className="text-2xl font-bold my-8">About HCLSoftware</h1>
-        <p>
+        <h1 className="heading my-8">About HCLSoftware</h1>
+        <p className="text-lg">
           At HCLSoftware, our mission is to drive digital transformation and
           empower businesses to achieve their full potential through innovative
           technology solutions. We are committed to delivering high-quality

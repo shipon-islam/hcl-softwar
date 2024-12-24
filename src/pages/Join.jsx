@@ -5,7 +5,7 @@ import { Button } from "../components/ui/button";
 export default function Join() {
   return (
     <div
-      className={`bg-[url('login-bg.png')] h-screen w-full bg-cover bg-center bg-hch-slate-2 grid place-items-center`}
+      className={`bg-[url('/images/login-bg.png')] h-screen w-full bg-cover bg-center bg-hcl-primary-2 grid place-items-center`}
     >
       <div>
         <h5 className="text-white text-center mb-4">Let’s get started</h5>
@@ -16,10 +16,13 @@ export default function Join() {
         />
       </div>
       <div>
-        <Button type="button" color="bg-hcl-blue">
-          Join
+        <Button
+          type="button"
+          className="bg-hcl-blue block w-full h-[3rem] text-xl"
+        >
+          Join us
         </Button>
-        <div className="flex text-md justify-center mt-2 font-medium text-gray-500 dark:text-hcl-slate">
+        <div className="flex text-xl justify-center mt-8  text-white">
           Don’t have an account?&nbsp;
           <Link
             to="/signup"

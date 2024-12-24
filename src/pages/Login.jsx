@@ -7,18 +7,16 @@ import { Link } from "react-router-dom";
 export default function Login() {
   return (
     <div
-      className={`bg-[#F9F9F9] md:bg-[url('/images/login-bg.png')] min-h-screen w-full bg-cover bg-center md:bg-hch-slate-2 grid place-items-center`}
+      className={`bg-[#F9F9F9] md:bg-[url('/images/login-bg.png')] min-h-screen w-full bg-cover bg-center md:bg-hcl-primary-2 grid place-items-center`}
     >
-      <Card className="bg-[#F9F9F9] w-full md:w-[25rem]  h-fit md:rounded-md ">
+      <Card className="bg-[#F9F9F9] w-full md:w-[30rem] lg:w-[35rem]  h-fit md:rounded-md ">
         <form>
           <img
             className="mx-auto mb-20 md:mb-14 md:w-40"
             src={hcl_logo}
             alt="logo"
           />
-          <p className="text-hcl-slate font-semibold pb-8">
-            Log in with your account
-          </p>
+          <p className="font-semibold text-xl pb-8">Log in with your account</p>
           <div className="space-y-6">
             <div>
               <BoxInput
@@ -37,9 +35,11 @@ export default function Login() {
               />
             </div>
 
-            <Button type="submit">sign in</Button>
+            <Button className="block w-full text-xl h-[3rem]" type="submit">
+              Sign in
+            </Button>
           </div>
-          <div className="flex text-md justify-center mt-16 font-medium text-gray-500 dark:text-hcl-slate">
+          <div className="flex text-md justify-center mt-32 font-medium ">
             Don’t have an account?&nbsp;
             <Link
               to="/signup"

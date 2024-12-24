@@ -7,10 +7,17 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-import { DeleteIcon, PhotoIcon, UnlockIcon } from "@/components/Hcl_Icons";
+import {
+  CheckIcon,
+  DeleteIcon,
+  PhotoIcon,
+  UnlockIcon,
+} from "@/components/Hcl_Icons";
 import { BoxInput, TextInput } from "@/components/Input";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { MdOutlineLock } from "react-icons/md";
+
 import {
   Dialog,
   DialogContent,
@@ -30,60 +37,64 @@ export default function Profile() {
     }, 500);
   };
   return (
-    <div className="text-hcl-slate layout-padding my-16 md:mx-10 xl:mx-24 grid md:grid-cols-[2fr_3fr] items-baseline gap-8">
-      <Card className="w-[20rem]">
-        <CardContent>
+    <div className="layout-padding mt-32 grid lg:grid-cols-[2fr_3fr] w-full items-start gap-8 ">
+      <Card className="lg:w-[20rem] 2xl:w-[29rem]">
+        <CardContent className="p-10">
           <div className="text-center my-4">
             <img className="mx-auto" src={avatar} alt="avatar" />
-            <h1>Michael Adams</h1>
+            <h1 className="font-bold text-xl mt-2">Michael Adams</h1>
           </div>
-          <div className="grid grid-cols-2 mt-4 gap-4">
+          <div className="grid grid-cols-2 mt-10 gap-4 mx-auto text-hcl-secondary">
             <div>
-              <h5 className="font-medium">First Name</h5>
-              <p className="text-gray-500 font-light">Michael</p>
+              <h5 className="font-medium text-lg">First Name</h5>
+              <p className=" font-light">Michael</p>
             </div>
             <div>
-              <h5 className="font-medium">Last Name</h5>
-              <p className="text-gray-500 font-light">Adams</p>
+              <h5 className="font-medium text-lg">Last Name</h5>
+              <p className=" font-light">Adams</p>
             </div>
             <div>
-              <h5 className="font-medium">Phone</h5>
-              <p className="text-gray-500 font-light">Not provided</p>
+              <h5 className="font-medium text-lg">Phone</h5>
+              <p className="font-light ">Not provided</p>
             </div>
             <div>
-              <h5 className="font-medium">Company</h5>
-              <p className="text-gray-500 font-light">Not provided</p>
+              <h5 className="font-medium text-lg">Company</h5>
+              <p className="font-light ">Not provided</p>
             </div>
             <div>
-              <h5 className="font-medium">Position</h5>
-              <p className="text-gray-500 font-light">Head of Design</p>
+              <h5 className="font-medium text-lg">Position</h5>
+              <p className="font-light ">Head of Design</p>
             </div>
             <div>
-              <h5 className="font-medium">Linkedin</h5>
-              <p className="text-gray-500 font-light">Not provided</p>
+              <h5 className="font-medium text-lg">Linkedin</h5>
+              <p className="font-light ">Not provided</p>
             </div>
             <div>
-              <h5 className="font-medium">Your Country</h5>
-              <p className="text-gray-500 font-light">Argentina</p>
+              <h5 className="font-medium text-lg">Your Country</h5>
+              <p className="font-light ">Argentina</p>
             </div>
             <div>
-              <h5 className="font-medium">PhoneNumber</h5>
-              <p className="text-gray-500 font-light">1134370312</p>
+              <h5 className="font-medium text-lg">PhoneNumber</h5>
+              <p className="font-light ">1134370312</p>
             </div>
           </div>
-          <div className="mt-8">
-            <h3 className="font-medium">Restrictions</h3>
-            <p className="text-sm">
+          <div className="mt-8 text-hcl-secondary">
+            <h3 className="font-medium text-lg">Restrictions</h3>
+            <p className="text-md">
               Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
               nonummy nibh euismod tincidunt ut laoreet dolore magna
             </p>
           </div>
         </CardContent>
       </Card>
-      <div>
+      <div className=" lg:w-[28rem] 2xl:w-[40rem]">
         <div className="flex gap-x-4 items-center">
           <div className="relative">
-            <img className="w-20" src={avatar} alt="avatar" />
+            <img
+              className="w-[5.68rem] object-cover"
+              src={avatar}
+              alt="avatar"
+            />
             <Popover>
               <PopoverTrigger className="absolute -bottom-2 -right-2 ">
                 <button className="bg-white shadow-custom rounded-full p-1">
@@ -102,17 +113,17 @@ export default function Profile() {
           </div>
 
           <div>
-            <h1 className="font-bold">Michael Adams</h1>
-            <button className="text-sm underline text-hcl-blue">
+            <h1 className="font-bold text-2xl">Michael Adams</h1>
+            <button className="text-lg underline text-hcl-blue">
               Edit display name
             </button>
           </div>
         </div>
-        <h1 className="font-bold mt-10 mb-4 ml-1 text-lg">About</h1>
+        <h1 className="font-bold mt-12 mb-4 ml-1 text-2xl">About</h1>
         <div className="relative">
           <Textarea
             placeholder="Share something about yourself..."
-            className="defalt-rm bg-white resize-none placeholder:text-gray-400 h-28"
+            className="defalt-rm bg-white resize-none placeholder:text-gray-400 h-28 textarea-text"
           />
           <button className="absolute bottom-2 right-2">
             <PhotoIcon />
@@ -150,26 +161,28 @@ export default function Profile() {
           </div>
           <Textarea
             placeholder="Restrictions"
-            className="defalt-rm bg-white resize-none placeholder:text-gray-400 h-28"
+            className="defalt-rm bg-white resize-none placeholder:text-gray-400 h-28 textarea-text"
           />
-          <Button>Save changes</Button>
+          <Button className="px-14 bg-hcl-primary hover:bg-hcl-secondary text-lg h-10">
+            <CheckIcon />
+            <span>Save changes</span>
+          </Button>
         </form>
         <h1 className="font-bold my-5">Account</h1>
 
         <Dialog>
           <DialogTrigger className="block mt-4">
-            <Button className="bg-slate-600/50 text-hcl-slate">
+            <Button className="bg-[#D2DBF0] text-hcl-primary hover:bg-hcl-secondary hover:text-white px-10 h-10 text-lg">
+              <MdOutlineLock />
               Change password
             </Button>
           </DialogTrigger>
-          <DialogContent className="w-[25rem]">
+          <DialogContent className="w-[29rem] h-auto">
             <DialogHeader>
               <DialogTitle />
-              <DialogDescription className="pt-0 pb-8 grid place-item-center">
+              <DialogDescription className="p-4 grid place-item-center">
                 <div className=" space-y-6 ">
-                  <h2 className="font-bold text-xl text-hcl-slate">
-                    Change Password
-                  </h2>
+                  <h2 className="font-bold text-2xl ">Change Password</h2>
                   <form className="space-y-6 " onSubmit={handlePassword}>
                     <BoxInput
                       label="Current Password"
@@ -180,7 +193,12 @@ export default function Profile() {
                       label="Repeat Password"
                       className="w-full block"
                     />
-                    <Button className="block w-full">Change password</Button>
+                    <div>
+                      <Button className="bg-[#D2DBF0] text-hcl-primary hover:bg-hcl-secondary hover:text-white px-10 h-[3rem] text-lg w-full mt-8 ">
+                        <MdOutlineLock />
+                        Change password
+                      </Button>
+                    </div>
                   </form>
                 </div>
               </DialogDescription>
@@ -188,27 +206,27 @@ export default function Profile() {
           </DialogContent>
         </Dialog>
         <Dialog>
-          <DialogTrigger className="block mt-4">
+          <DialogTrigger className="block mt-10">
             <button className=" underline text-hcl-blue">Delete Account</button>
           </DialogTrigger>
-          <DialogContent className=" w-[25rem]">
+          <DialogContent className=" w-[29rem]">
             <DialogHeader>
               <DialogTitle />
-              <DialogDescription className="pt-0 pb-8 grid place-self-center">
+              <DialogDescription className=" grid place-items-center p-4">
                 <div className="text-center space-y-6 px-10">
                   <span className="block w-fit mx-auto">
                     <DeleteIcon />
                   </span>
 
-                  <h2 className="font-bold text-xl text-hcl-slate">
+                  <h2 className="font-bold text-2xl text-hcl-slate">
                     Are you sure?
                   </h2>
-                  <p className="text-hcl-slate text-[1rem]">
+                  <p className="text-hcl-secondary text-xl">
                     Your profile, personal information, events and data will be
                     lost
                   </p>
-                  <p className="text-gray-400">This cannot be undone</p>
-                  <Button className="w-fit">Delete</Button>
+                  <p className="text-hcl-lite text-lg">This cannot be undone</p>
+                  <Button className="px-10">Delete</Button>
                 </div>
               </DialogDescription>
             </DialogHeader>

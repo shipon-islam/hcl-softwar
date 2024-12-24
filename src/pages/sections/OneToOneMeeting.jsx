@@ -9,192 +9,31 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { nameLinks, time_fixers } from "@/constants";
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import { RiCalendar2Line } from "react-icons/ri";
-const time_fixers = [
-  {
-    id: 1,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 2,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 3,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 4,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 5,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 6,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 7,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 8,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 9,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
 
-  {
-    id: 10,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 11,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 12,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 13,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 14,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 15,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 16,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 17,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 18,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 19,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 20,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 21,
-    time: "08:00",
-    disable: false,
-    selected: true,
-  },
-  {
-    id: 22,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 23,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 24,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 25,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 26,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-  {
-    id: 27,
-    time: "08:00",
-    disable: false,
-    selected: false,
-  },
-];
 export default function OneToOneMeeting() {
   const [openPermitionModal, setOpenPermitionModal] = useState(false);
   const [openSuccessModal, setOpenSuccessModal] = useState(false);
   const [openWrongModal, setOpenWrongModal] = useState(false);
   return (
     <div>
-      <EventDateTopBar />
-      <div className="flex justify-center gap-x-8">
-        <button className="flex items-center gap-x-2 text-xl mt-4 border-2 border-hcl-slate px-4 py-2 rounded-md">
+      <EventDateTopBar dateLinks={nameLinks} />
+      <div className="flex flex-col sm:flex-row justify-center sm:justify-start gap-x-8 py-6">
+        <button className="flex  items-center gap-x-2 text-xl mt-4 border-2 border-hcl-primary px-4 py-2 rounded-md">
           <FaWhatsapp className="text-2xl" />
-          <span>Join Friday’s WhatsApp Group</span>
+          <span className="text-[1rem] md:text-lg">
+            Join Friday’s WhatsApp Group
+          </span>
         </button>
         <button className="flex items-center gap-x-2 text-xl mt-4 border-2 border-hcl-blue px-4 py-2 rounded-md text-hcl-blue">
-          <span>Confirm attendance</span>
+          <span className="text-[1rem] md:text-lg">Confirm attendance</span>
         </button>
       </div>
-      <Button className="bg-hcl-slate">Send</Button>
-      <ul className="flex flex-wrap gap-5 mt-8">
+
+      <ul className="flex flex-wrap justify-center sm:justify-start gap-5 mt-8">
         {time_fixers.map((time_fixer) => (
           <li
             key={time_fixer.id}
@@ -208,36 +47,38 @@ export default function OneToOneMeeting() {
           </li>
         ))}
       </ul>
-      <p className="my-8">*All meetings are 20min max.</p>
+      <p className="my-8 text-center sm:text-left">
+        *All meetings are 20min max.
+      </p>
       <button
         onClick={() => setOpenPermitionModal(true)}
-        className="flex items-center gap-x-1 bg-hcl-slate text-white px-4 py-1.5 rounded-md mx-auto mt-8"
+        className="flex items-center gap-x-1 bg-hcl-primary text-white px-4 py-1.5 rounded-md mx-auto my-8"
       >
         <RiCalendar2Line />
         Schedule meeting
       </button>
       <Dialog open={openPermitionModal} onOpenChange={setOpenPermitionModal}>
         <DialogTrigger />
-        <DialogContent className=" w-[20rem]">
+        <DialogContent className=" w-[23rem] rounded-md">
           <DialogHeader>
             <DialogTitle />
             <DialogDescription className="p-4 text-center grid place-items-center">
-              <p className="font-medium">
+              <p className="font-medium text-lg">
                 Are you sure you want to schedule this meeting?
               </p>
-              <di className="flex justify-between gap-x-4 mt-6 text-white">
-                <button
+              <di className="flex justify-between gap-x-4 mt-8 text-white">
+                <Button
                   onClick={() => setOpenWrongModal(true)}
-                  className="bg-hcl-slate px-4 py-1 rounded-md"
+                  className="bg-hcl-primary hover:bg-hcl-secondary px-4 py-1 rounded-md"
                 >
                   Go back
-                </button>
-                <button
+                </Button>
+                <Button
                   onClick={() => setOpenSuccessModal(true)}
-                  className="bg-hcl-slate px-4 py-1 rounded-md"
+                  className="bg-hcl-primary hover:bg-hcl-secondary px-4 py-1 rounded-md"
                 >
                   Confirm
-                </button>
+                </Button>
               </di>
             </DialogDescription>
           </DialogHeader>
@@ -245,32 +86,36 @@ export default function OneToOneMeeting() {
       </Dialog>
       <Dialog open={openSuccessModal} onOpenChange={setOpenSuccessModal}>
         <DialogTrigger />
-        <DialogContent className=" w-[20rem]">
+        <DialogContent className=" w-[29rem] rounded-md">
           <DialogHeader>
             <DialogTitle />
-            <DialogDescription className="pt-8 grid place-items-center text-center">
+            <DialogDescription className="p-4 grid place-items-center text-center">
               <span className="block w-fit mx-auto">
                 <SuccessEventIcon />
               </span>
-              <h2 className="font-medium">Success!</h2>
-              <p>Your meeting has been booked</p>
-              <p className="text-gray-400 pt-8">Thank you!</p>
+              <h2 className="font-bold text-2xl text-hcl-primary py-4">
+                Success!
+              </h2>
+              <p className="text-lg">Your meeting has been booked</p>
+              <p className="text-hcl-lite pt-8">Thank you!</p>
             </DialogDescription>
           </DialogHeader>
         </DialogContent>
       </Dialog>
       <Dialog open={openWrongModal} onOpenChange={setOpenWrongModal}>
         <DialogTrigger />
-        <DialogContent className=" w-[20rem]">
+        <DialogContent className=" w-[29rem]">
           <DialogHeader>
             <DialogTitle />
             <DialogDescription className="p-8 grid place-items-center text-center">
               <span className="block w-fit mx-auto">
                 <FailedEventIcon />
               </span>
-              <h2 className="font-medium">We’re sorry!</h2>
-              <p>Your message could not be sent</p>
-              <p className="text-gray-400 pt-8">Please try again</p>
+              <h2 className="font-bold text-2xl text-hcl-primary py-4">
+                We’re sorry!
+              </h2>
+              <p className="text-lg">Your message could not be sent</p>
+              <p className="text-hcl-lite pt-8">Please try again</p>
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

@@ -35,20 +35,20 @@ export default function PrivacyPolicy() {
   };
 
   return (
-    <div className=" text-hcl-slate layout-padding my-16 md:mx-10 xl:mx-48">
+    <div className=" layout-padding mt-32 mb-16 md:mx-10 xl:mx-24 max-w-[65rem] mx-auto">
       <div>
-        <h1 className="text-2xl font-bold my-8">Privacy Policy</h1>
+        <h1 className="heading my-8">Privacy Policy</h1>
         <ul className="space-y-6">
           {policies.map((policy) => (
             <li key={policy.id}>
               <h1
-                className="flex items-center justify-between w-fit cursor-pointer font-bold text-lg"
+                className="flex items-center justify-between w-fit cursor-pointer font-bold text-lg pb-1"
                 onClick={(e) => collapseHandler(e)}
               >
-                <span>{policy.ques}</span>
+                <span className="text-xl">{policy.ques}</span>
                 <RiArrowDownSLine className={`icon`} />
               </h1>
-              <p className={policy.isOpen ? "block" : "hidden"}>
+              <p className={`${policy.isOpen ? "block" : "hidden"} text-lg`}>
                 {policy.answer}{" "}
                 {policy.isSeemore && (
                   <button className="text-hcl-blue block mt-4">See More</button>

@@ -1,6 +1,5 @@
 import { ErrorIcon, MailRightIcon } from "@/components/Hcl_Icons";
 import { BoxInput } from "@/components/Input";
-import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -25,10 +24,10 @@ export default function Contact() {
     }, 1000);
   };
   return (
-    <div className="text-hcl-slate layout-padding my-16 md:mx-10 xl:mx-48">
+    <div className="layout-padding mt-32 mb-16 md:mx-10 xl:mx-24 max-w-[65rem] mx-auto">
       <div>
-        <h1 className="text-2xl font-bold my-8">Account settings</h1>
-        <p>
+        <h1 className="heading my-8">Account settings</h1>
+        <p className="text-lg">
           If you have any urgent questions or concerns regarding your event
           calendar, please get in touch with
           <a
@@ -52,35 +51,38 @@ export default function Contact() {
           <BoxInput label="Subject*" type="text" name="subject" />
         </div>
         <div className="space-y-2">
-          <label htmlFor="message">Message:</label>
-          <Textarea
-            placeholder="Share something about yourself..."
-            className="bg-white resize-none placeholder:text-gray-400 h-28 focus-visible:ring-0 text-2xl"
-          />
+          <label className="text-xl text-hcl-secondary" htmlFor="message">
+            Message:
+          </label>
+          <Textarea className="bg-white resize-none placeholder:text-gray-400 h-28 focus-visible:ring-0 text-2xl" />
         </div>
-        <Button
+        <button
           type="submit"
-          className="w-fit flex items-center gap-x-1 font-medium"
+          className="bg-hcl-primary flex items-center gap-x-1 font-medium text-white text-xl px-6 py-2 rounded-md hover:bg-hcl-secondary"
         >
-          <TbMailForward className="text-lg" />
+          <TbMailForward className="text-xl" />
           Send
-        </Button>
+        </button>
       </form>
 
       <Dialog open={openSuccessModal} onOpenChange={setOpenSuccessModal}>
         <DialogTrigger />
-        <DialogContent className=" w-[20rem]">
+        <DialogContent className=" w-[29rem]">
           <DialogHeader>
             <DialogTitle />
-            <DialogDescription className="pt-0 pb-8 grid place-self-center">
+            <DialogDescription className="p-4 grid place-items-center">
               <div className="text-center space-y-6 px-10">
                 <span className="block w-fit mx-auto">
                   <MailRightIcon fill={true} />
                 </span>
 
-                <h2 className="font-medium">Message sent successfully!</h2>
-                <p>Our team will reach out to you shortly</p>
-                <p className="text-gray-400 pt-8">Thank you!</p>
+                <h2 className="font-bold text-2xl">
+                  Message sent successfully!
+                </h2>
+                <p className="text-hcl-black  text-xl">
+                  Our team will reach out to you shortly
+                </p>
+                <p className="text-hcl-lite pt-8 text-xl">Thank you!</p>
               </div>
             </DialogDescription>
           </DialogHeader>
@@ -88,18 +90,20 @@ export default function Contact() {
       </Dialog>
       <Dialog open={openFailedModal} onOpenChange={setOpenFailedModal}>
         <DialogTrigger />
-        <DialogContent className=" w-[20rem]">
+        <DialogContent className=" w-[29rem]">
           <DialogHeader>
             <DialogTitle />
-            <DialogDescription className="pt-0 pb-8 grid place-self-center">
+            <DialogDescription className="p-4 grid place-items-center">
               <div className="text-center space-y-6 px-16">
                 <span className="block w-fit mx-auto">
                   <ErrorIcon fill={true} />
                 </span>
 
-                <h2 className="font-medium">We’re sorry!</h2>
-                <p>Your message could not be sent</p>
-                <p className="text-gray-400 pt-8">Please try again</p>
+                <h2 className="font-bold text-2xl">We’re sorry!</h2>
+                <p className="text-hcl-black  text-xl">
+                  Your message could not be sent
+                </p>
+                <p className="text-hcl-lite pt-8 text-xl">Please try again</p>
               </div>
             </DialogDescription>
           </DialogHeader>

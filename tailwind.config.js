@@ -5,14 +5,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        "hcl-slate": "#203055",
+        "hcl-primary": "#203055",
+        "hcl-primary-2": "#1C3366",
+        "hcl-secondary": "#292929",
+        "hcl-lite": "#BBBBBB",
         "hcl-teal": "#184680",
         "hcl-purple": "#551A8B",
         "hcl-blue": "#0086FF",
         "hcl-black": "#17182E",
-        "hcl-gray": "#292929",
-        "hch-slate-2": "#1C3366",
-        "hch-gray": "#F9F9F9",
+        "hcl-bg": "#F9F9F9",
+        "hcl-search": "#E6E9F0",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {

@@ -3,10 +3,13 @@
 @tailwind utilities;
 @layer utilities {
   .layout-wrapper {
-    @apply min-w-0 max-w-[1500px] mx-auto;
+    @apply min-w-0 max-w-[1920px] mx-auto;
+  }
+  .heading {
+    @apply font-bold text-2xl;
   }
   .layout-padding {
-    @apply px-4;
+    @apply px-4 sm:px-6 lg:px-8 xl:px-14;
   }
   .active-mobile-nav {
     @apply before:absolute before:-top-1 before:left-1/2 before:bg-hcl-blue before:w-6 before:rounded-md before:h-1.5 before:-translate-x-1/2;
@@ -20,17 +23,26 @@
   }
 
   .datelink:hover button {
-    @apply bg-hcl-slate text-white;
+    @apply bg-hcl-primary text-white;
   }
   .datelink.active button {
-    @apply bg-hcl-slate text-white;
+    @apply bg-hcl-primary text-white;
   }
   .datelink:hover span {
-    @apply text-hcl-slate;
+    @apply text-hcl-primary;
   }
 
   .datelink.active span {
-    @apply text-hcl-slate;
+    @apply text-hcl-primary;
+  }
+  .input-search > label + div {
+    @apply flex-row-reverse bg-hcl-search rounded-md;
+  }
+  .input-text {
+    @apply text-lg !important;
+  }
+  .textarea-text {
+    @apply text-lg !important;
   }
 }
 
@@ -106,4 +118,27 @@
 }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
   background-color: rgb(187, 178, 178);
+}
+.custom-checkbox {
+  width: 20px !important;
+  height: 18px !important;
+  border: 1px solid gray;
+  border-radius: 4px;
+  appearance: none;
+  background-color: white;
+  cursor: pointer;
+}
+
+.custom-checkbox:checked {
+  position: relative;
+}
+
+.custom-checkbox:checked::after {
+  content: "●";
+  color: #0086ff;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

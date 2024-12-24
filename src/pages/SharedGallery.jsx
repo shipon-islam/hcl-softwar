@@ -34,11 +34,10 @@ import {
   FaLinkedin,
   FaWhatsapp,
 } from "react-icons/fa";
-import { MdContentCopy } from "react-icons/md";
+import { MdContentCopy, MdFileDownloadDone } from "react-icons/md";
 
 import { event_flags_gellery, gallery_posts } from "@/constants";
 import { X } from "lucide-react";
-import { useState } from "react";
 
 const peoples = [
   { name: "Natalie Johnson" },
@@ -47,16 +46,35 @@ const peoples = [
   { name: "Nathaniel Storm" },
 ];
 export default function SharedGallery() {
-  const [search, setSearch] = useState("");
-  const [selected, setSelected] = useState([]);
+  // const [search, setSearch] = useState("");
+  // const [selected, setSelected] = useState([]);
+  const url = "https://www.hclsoftware.com/25...";
+
+  const handleCopy = ({ currentTarget }) => {
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        currentTarget.children[0].classList.add("hidden");
+        currentTarget.children[1].classList.remove("hidden");
+        setInterval(() => {
+          currentTarget.children[0].classList.remove("hidden");
+          currentTarget.children[1].classList.add("hidden");
+        }, 500);
+      })
+      .catch((err) => {
+        console.error("Failed to copy text: ", err);
+      });
+  };
 
   return (
-    <div className="text-hcl-slate layout-padding my-16 md:mx-10 xl:mx-24">
+    <div className="layout-padding my-16">
       <div>
-        <h1 className="text-2xl font-bold my-8">Shared Event Gallery</h1>
-        <p>Share pictures you have from the event!</p>
+        <h1 className="heading my-8">Shared Event Gallery</h1>
+        <p className="text-hcl-black">
+          Share pictures you have from the event!
+        </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4 my-8">
+      <div className="grid  sm:grid-cols-2  lg:grid-cols-4 xl:grid-cols-5 gap-4 my-8">
         {event_flags_gellery.map((event) => (
           <Card key={event.id} className="p-3">
             <CardContent className="pb-0 px-0">
@@ -65,23 +83,27 @@ export default function SharedGallery() {
                 src={event.photo}
                 alt="flag"
               />
-              <div className="mt-4">
-                <h1>{event.name}</h1>
-                <small className="italic relative -top-1">{event.date}</small>
+              <div className="mt-6 mb-2">
+                <h1 className="font-bold text-lg">{event.name}</h1>
+                <small className="italic relative -top-1 text-[1rem] text-[#5A6378]">
+                  {event.date}
+                </small>
               </div>
             </CardContent>
           </Card>
         ))}
       </div>
       <div>
-        <div className="flex justify-between">
+        <div className="flex flex-col lg:flex-row justify-between">
           <div>
-            <h1 className="text-2xl font-bold my-8">Shared Event Gallery</h1>
-            <p>Share pictures you have from the event!</p>
+            <h1 className="heading my-8">Shared Event Gallery</h1>
+            <p className="text-hcl-black">
+              Share pictures you have from the event!
+            </p>
           </div>
-          <div className="flex space-x-4 items-center">
+          <div className="flex space-x-4 items-center mt-8 lg:mt-0">
             <Select>
-              <SelectTrigger className="w-[180px] bg-hcl-slate text-white">
+              <SelectTrigger className="w-[180px] bg-hcl-primary text-white">
                 <SelectValue placeholder="Sort By" />
               </SelectTrigger>
               <SelectContent>
@@ -95,13 +117,20 @@ export default function SharedGallery() {
               <DialogTrigger>
                 <PhotoPlusIcon />
               </DialogTrigger>
-              <DialogContent>
+              <DialogContent className="sm:min-w-[42rem] lg:min-w-[60rem]  lg:min-h-[30rem] bg-transparent border-none p-0 ">
                 <DialogHeader>
                   <DialogTitle />
-                  <DialogDescription>
-                    <Command>
+                  <DialogDescription className="grid sm:grid-cols-2 gap-x-4 h-[40] lg:h-[25rem] p-0 ">
+                    <div className="">
+                      <img
+                        className="rounded-md h-auto object-cover"
+                        src="/images/verticle-1.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <Command className="p-8 border-b-none input-search ">
                       <CommandInput
-                        className="border-none focus:outline-none focus:border-none focus:border-0"
+                        className="focus:outline-none focus:border-none focus:border-0 "
                         placeholder=""
                       />
                       <CommandList>
@@ -111,7 +140,7 @@ export default function SharedGallery() {
                             <CommandItem key={index}>{people.name}</CommandItem>
                           ))}
                         </CommandGroup>
-                        <ul className="flex flex-wrap gap-4 mt-4">
+                        <ul className="flex flex-wrap gap-4 mt-4 ">
                           {peoples.map((people, index) => (
                             <li
                               className="flex items-center bg-slate-200 px-2 py-0.5 rounded-md text-sm"
@@ -133,34 +162,40 @@ export default function SharedGallery() {
               <DialogTrigger>
                 <ShareIcon />
               </DialogTrigger>
-              <DialogContent className="w-[15rem]">
+              <DialogContent className="w-[19rem] py-8">
                 <DialogHeader>
                   <DialogTitle />
-                  <DialogDescription>
+                  <DialogDescription className="grid place-content-center ">
                     <h1 className="capitalize font-bold">share</h1>
-                    <div className="flex items-center gap-x-9 mb-8 mt-3  text-xl">
+                    <div className="flex items-center gap-x-12 mb-8 mt-3  text-2xl">
                       <a
                         className="hover:text-hcl-blue transition-colors duration-300"
-                        href="#"
+                        target="blank"
+                        href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
                       >
                         <FaFacebook />
                       </a>
                       <a
                         className="hover:text-hcl-blue transition-colors duration-300"
-                        href="#"
+                        href={`https://www.linkedin.com/sharing/share-offsite/?url=${url}`}
+                        target="blank"
                       >
                         <FaLinkedin />
                       </a>
                       <a
                         className="hover:text-hcl-blue transition-colors duration-300"
-                        href="#"
+                        href="https://www.instagram.com/"
+                        target="blank"
                       >
                         <FaInstagram />
                       </a>
 
                       <a
                         className="hover:text-hcl-blue transition-colors duration-300"
-                        href="#"
+                        href={`https://wa.me/?text=${encodeURIComponent(
+                          "hi" + " " + url
+                        )}`}
+                        target="blank"
                       >
                         <FaWhatsapp />
                       </a>
@@ -168,11 +203,12 @@ export default function SharedGallery() {
                     <div>
                       <h5 className="font-medium mb-1">Copy link</h5>
                       <div className="flex gap-x-2 items-center justify-between">
-                        <p className="bg-hch-gray w-40 overflow-hidden py-2 px-2 text-gray-300">
-                          https://www.hclsoftware.com/25...
+                        <p className="bg-hch-gray w-48 overflow-hidden py-2  text-gray-300">
+                          {url}
                         </p>
-                        <button>
-                          <MdContentCopy className="text-xl" />
+                        <button onClick={handleCopy}>
+                          <MdContentCopy className="text-xl hover:text-hcl-secondary" />
+                          <MdFileDownloadDone className="text-xl text-hcl-blue hidden" />
                         </button>
                       </div>
                     </div>
@@ -182,56 +218,68 @@ export default function SharedGallery() {
             </Dialog>
           </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-8 grid-flow-dense">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-8  sm:auto-rows-[170px] lg:auto-cols-[200px] 2xl:auto-rows-[200px]">
           {gallery_posts.map((post) => (
             <Card
               key={post.id}
-              className={`p-3 h-fit ${
-                post.photo.type == "horizontal" ? "row-span-2" : "aspect-[3/4]"
+              className={`overflow-hidden ${
+                post.photo.type === "horizontal" && "row-span-2"
               }`}
             >
-              <CardContent className="pb-2 px-0">
+              <CardContent className="p-2 ">
                 <div className="relative">
                   <img
-                    className="h-auto max-w-full rounded-lg"
+                    className={`w-full rounded-lg object-cover  ${
+                      post.photo.type == "horizontal"
+                        ? "h-full sm:max-h-[340px] lg:max-h-[400px]"
+                        : "sm:h-[150px] lg:h-[150px] 2xl:h-[180px]"
+                    }`}
                     src={post?.photo?.url}
-                    alt=""
+                    alt="photo"
                   />
 
-                  <div className="flex justify-between w-full text-[0.7rem] absolute bottom-1  px-1">
-                    <div className="flex justify-center items-center gap-x-1  bg-white/80 px-1 rounded-md">
+                  {/* Overlay for likes and info */}
+                  <div className="flex justify-between w-full text-[0.7rem] absolute bottom-1 px-1">
+                    <div className="flex justify-center items-center gap-x-1 bg-white/80 px-1 rounded-md">
                       <button>
                         <HeartIcon className="w-4" />
                       </button>
                       <span>{post.likes}</span>
                     </div>
-                    <div className="flex justify-center items-center gap-x-1 text-white bg-black/30 px-1.5 rounded-md ">
-                      <span>{post.owner},</span>
-                      <span>{post.date}</span>
+                    <div className="flex justify-center items-center gap-x-1 text-white bg-black/30 px-1.5 rounded-md">
+                      <span>{post.owner}</span>, <span>{post.date}</span>
                     </div>
                   </div>
                 </div>
-                <div>
-                  {post.tagged_members.length > 0 && (
-                    <div className="flex justify-between mt-4">
-                      <h1 className="font-bold">Tagged members</h1>
+
+                {/* Tagged members */}
+                {post.tagged_members.length > 0 && (
+                  <div className="mt-4">
+                    <div className="flex justify-between">
+                      <h1 className="font-bold text-hcl-secondary">
+                        Tagged members
+                      </h1>
                       <div className="flex justify-center items-center gap-x-1">
                         <button>
-                          <HeartIcon />
+                          <HeartIcon className="w-4" />
                         </button>
                         <button>
-                          <AddPeopleIcon />
+                          <AddPeopleIcon className="w-4" />
                         </button>
                       </div>
                     </div>
-                  )}
-
-                  {post.tagged_members.map((member) => (
-                    <span className="text-sm pr-1" key={member}>
-                      {member},
-                    </span>
-                  ))}
-                </div>
+                    <div className="mt-1">
+                      {post.tagged_members.map((member) => (
+                        <span
+                          key={member}
+                          className="text-sm pr-1 text-hcl-secondary"
+                        >
+                          {member},
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
           ))}
